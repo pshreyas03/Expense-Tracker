@@ -14,14 +14,14 @@ function add_expense(){
     var amount = document.getElementsByClassName("form-input")[0].value;
     var date = document.getElementsByClassName("form-input")[2].value;
     var note = document.getElementsByClassName("form-input")[3].value;
-    var category = document.getElementsByClassName("form-input")[1].selectedIndex;
+    var category = document.getElementById("category").selectedIndex;
     var selected = document.getElementsByTagName("option")[category].value;
 
     if (amount && date && note && selected){
         alert("Successfully added expense!");
         var table = document.getElementsByTagName("table")[0];
         var new_row = document.createElement("tr");
-        new_row.innerHTML = `<tr style = border: 1px solid white;>
+        new_row.innerHTML = `<tr style = border-bottom: 1px solid white;>
         <td>${amount}</td>
         <td>${selected}</td>
         <td>${date}</td>
@@ -42,7 +42,7 @@ function add_expense(){
 
 function add_category(){
     var new_category_value = document.getElementsByName("new-category")[0].value;
-    if (new_category_value){
+    if (new_category_value){ 
         alert("New category added successfully!");
         var dropdown = document.getElementsByName("category")[0];
         var available_categories = document.getElementsByClassName("available-categories")[0];
@@ -60,18 +60,18 @@ function add_category(){
 
 function add_category_page(){
     if (document.getElementsByClassName("add-new-category")[0].style.display == "block"){
-        document.getElementsByClassName("add-new-category")[0].style.disply = "none";
+        document.getElementsByClassName("add-new-category")[0].style.display = "none";
     }
     else{
-        document.getElementsByClassName("add-new-category")[0].style.disply == "block";
+        document.getElementsByClassName("add-new-category")[0].style.display = "block";
     }
 }
 
 function add_expense_page(){
     if (document.getElementsByClassName("add-new-expense")[0].style.display == "block"){
-        document.getElementsByClassName("add-new-expense")[0].style.disply = "none";
+        document.getElementsByClassName("add-new-expense")[0].style.display = "none";
     }
     else{
-        document.getElementsByClassName("add-new-expense")[0].style.disply == "block"
+        document.getElementsByClassName("add-new-expense")[0].style.display = "block"
     }
 }
